@@ -56,6 +56,9 @@ app.post('/students', function(req, res) {
 app.get('/admin', routes.admin);
 app.post('/admin', function(req, res) {
   firebaseApp.auth().signInWithEmailAndPassword(req.body.username, req.body.password)
+    .catch(function(error) {
+        res.redirect('admin')
+    })
     .then(function(user) {
       if( user ) {
         res.redirect('people')
