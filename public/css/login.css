@@ -1,0 +1,30 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecf0f1;
+}
+.login form {
+  max-width: 300px;
+}
+.login form h1 {
+  font-size: 30px;
+  text-align: center;
+  font-family: 'db_heaventlight';
+  margin: 0;
+  color: #222;
+  line-height: 3;
+  letter-spacing: 1.2px;
+}
+.login input {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: none;
+  border: none;
+}
+.login button {
+  width: 100%;
+  border-radius: 10px;
+}

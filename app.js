@@ -11,8 +11,9 @@ var vm = new Vue({
         fullname: this.fullname,
         nickname: this.nickname,
         class: this.class,
-        phone: this.phone,
         school: this.school,
+        phone: this.phone,
+        facebook: this.facebook,
         university: this.university,
         ask: this.ask,
         rule: this.rule,
@@ -34,3 +35,33 @@ var vm = new Vue({
     }
   }
 });
+
+var vm = new Vue({
+  el: '#people', 
+  data: {
+    students: []
+  },
+  methods: {
+    setPass: function(key, pass) {
+      this.students.map(student => {
+        if( student.key == key ) {
+          student.pass = !pass 
+        }
+
+        return student
+      })
+
+      this.$http.post('/passStudent', {key, pass})
+    }
+  },
+  created() {
+    this.$http.get('/students').then(function( data ) {
+   
+      for(var key in data.data.students) {
+        data.data.students[key].key = key;
+        this.students.push(data.data.students[key])
+      }
+
+    }.bind(this))
+  }
+})

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inthanin Guild Camp #1</title>
+  <link rel="shortcut icon" type="image/png" href="/build/images/favicon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:url"                content="http://www.inthanincamp.xyz/" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="เปิดรับสมัครน้องค่าย ค่ายอินทนิลไกด์แคมป์ #1" />
+  <meta property="og:description"        content="ตอนนี้กำลังเปิดรับสมัครน้องๆเพื่อเข้าร่วมค่ายอินทนิลไกด์แคมป์ ค่ายสานฝันสำหรับน้องๆโรงเรียนเทศบาลเฉลิมพระเกียรติฯสมเด็จพระเทพรัตนราชสุดาสยามบรมราชกุมารี" />
+  <meta property="og:image"              content="http://www.inthanincamp.xyz/build/images/facebook.png" />
+
+  <link rel="stylesheet" href="/build/css/Font-face.css"> 
+  <link rel="stylesheet" href="/build/css/style.css">
+</head>
+<body>
+
+   <div id="people" class="people">
+        <div class="wrapper">
+            <div class="flex">
+                <span class="flex-1">จำนวน {{ students.length }} คน</span>
+                <span class="flex-1 text-right">คนผ่าน {{ students.filter(student => student.pass).length }} คน</span>
+            </div>
+            <div class="head flex">
+                <div class="flex-1">ชื่อ-นามสกุล</div>
+                <div class="flex-1">ชื่อเล่น</div>
+                <div class="flex-1">กำลังศึกษาชั้น</div>
+                <div class="flex-1">โรงเรียน</div>
+                <div class="flex-1">Facebook</div>
+                <div class="flex-1">เบอร์ติดต่อ</div>
+                <div class="flex-1">อยากเข้า ม.</div>
+                <div class="flex-1">เลือกอะไรในโลก</div>
+                <div class="flex-1">ทำผิดกฎโรงเรียน</div>
+                <div class="flex-1">แต่งประโยค</div>
+                <div class="flex-1">สามารถทำ</div>
+                <div class="flex-1">ทำไมถึงเข้าค่าย</div>
+                <div class="flex-1">ผ่าน/ไม่ผ่าน</div>
+            </div>
+            <div class="body">
+                <div class="row flex" v-for="student in students" :key="student.key">
+                    <div class="flex-1">{{student.fullname}}</div>
+                    <div class="flex-1">{{student.nickname}}</div>
+                    <div class="flex-1">{{student.class}}</div>
+                    <div class="flex-1">{{student.facebook}}</div>
+                    <div class="flex-1">{{student.phone}}</div>
+                    <div class="flex-1">{{student.university}}</div>
+                    <div class="flex-1">{{student.ask}}</div>
+                    <div class="flex-1">{{student.rule}}</div>
+                    <div class="flex-1">{{student.sentence}}</div>
+                    <div class="flex-1">{{student.wanttodo}}</div>
+                    <div class="flex-1">{{student.why}}</div>
+                    <div class="flex-1">
+                        <form>
+                            <input type="checkbox" checked="{{student.pass}}" @change="setPass(student.key, student.pass)"  />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="node_modules/vue/dist/vue.min.js"></script>
+<script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+<script src="app.js"></script>
+</html>

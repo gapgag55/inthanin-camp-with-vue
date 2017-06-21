@@ -1,0 +1,39 @@
+.people .wrapper {
+  width: 1100px;
+  padding: 40px;
+  font-family: 'db_heaventmed';
+}
+.people .wrapper span {
+  font-size: 20px;
+}
+.people .wrapper .text-right {
+  text-align: right;
+}
+.people .head, .people .row {
+  padding: 20px 0;
+}
+.people .row {
+  font-family: 'db_heaventlight';
+}
+.people .head, .people .body {
+  border-bottom: 1px solid #eee;
+  font-family: 'db_heaventmed';
+}
+.people .head div:not(.row), .people .body div:not(.row) {
+  padding: 0 10px;
+}
+.people .head div:not(.row):first-child, .people .body div:not(.row):first-child {
+  padding-left: 0;
+}
+.people .head div:not(.row):last-child, .people .body div:not(.row):last-child {
+  padding-right: 0;
+}
+.people .head .row, .people .body .row {
+  border-bottom: 1px solid #eee;
+}
+.people .head .row:last-child, .people .body .row:last-child {
+  border: none;
+}
+.people .head form, .people .body form {
+  width: auto;
+}

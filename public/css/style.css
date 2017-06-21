@@ -2,6 +2,8 @@
 @import url('Footer.css');
 @import url('Card.css');
 @import url('Form.css');
+@import url('login.css');
+@import url('people.css');
 
 html, body, h1, h2, h3, h4  {
     padding: 0;
