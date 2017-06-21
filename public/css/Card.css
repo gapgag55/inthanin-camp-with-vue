@@ -1,0 +1,67 @@
+.popup {
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #000;
+  z-index: 9999;
+}
+.popup.is-active {
+  display: flex;
+}
+.popup .close {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  cursor: pointer;
+}
+.popup .close:before, .popup .close:after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 20px;
+  background-color: #333;
+  position: absolute;
+}
+.popup .close:before {
+  transform: rotate(45deg);
+}
+.popup .close:after {
+  transform: rotate(135deg);
+}
+.popup .card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  width: 30%;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.popup .card h4, .popup .card p {
+  margin: 0;
+}
+.popup .card h4 {
+  font-size: 40px;
+  color: #222;
+}
+.popup .card p {
+  font-family: 'db_heaventlight';
+  text-align: center;
+  letter-spacing: 1.2px;
+  color: #222;
+  font-size: 20px;
+}
+.popup .card iframe {
+  margin-top: 20px;
+}

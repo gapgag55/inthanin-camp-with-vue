@@ -1,0 +1,13 @@
+@import url('Hero.css');
+@import url('Footer.css');
+@import url('Card.css');
+@import url('Form.css');
+
+html, body, h1, h2, h3, h4  {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}

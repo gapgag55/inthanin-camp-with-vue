@@ -3,10 +3,23 @@ var express        = require('express'),
     methodOverride = require('method-override'),
     errorHandler   = require('errorhandler'),
     morgan         = require('morgan'),
-    routes         = require('./backend'),
-    api            = require('./backend/api');
+    routes         = require('./backend')
 
-var app = module.exports = express();
+var Firebase = require('firebase')
+
+var config = {
+    apiKey: "AIzaSyDPeOdjEBQpMlSwcswHdjm7KFEysvog8N0",
+    authDomain: "inthanincamp.firebaseapp.com",
+    databaseURL: "https://inthanincamp.firebaseio.com",
+    projectId: "inthanincamp",
+    storageBucket: "inthanincamp.appspot.com",
+    messagingSenderId: "7627553732"
+  };
+
+var firebaseApp = Firebase.initializeApp(config)
+var db = firebaseApp.database()
+
+var app = express();
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -30,8 +43,14 @@ if ('production' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.all('/api/events', api.events);
-app.all('/api/events/:eventId', api.event)
+app.post('/students', function(req, res) {
+  var students = db.ref('student')
+  students.push(
+    req.body
+  )
+
+  res.send({add: true})
+})
 
 app.listen(8080);
 console.log('Magic happens on port 8080...');
