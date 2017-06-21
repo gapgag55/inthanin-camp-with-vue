@@ -54,6 +54,11 @@ var vm = new Vue({
       this.$http.post('/passStudent', {key, pass})
     }
   },
+  computed: {
+    countStudent: function() {
+      return this.students.filter(student => student.pass).length
+    }
+  },
   created() {
     this.$http.get('/students').then(function( data ) {
    
