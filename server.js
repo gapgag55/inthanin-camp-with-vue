@@ -49,7 +49,7 @@ app.post('/students', function(req, res) {
     req.body
   )
 
-  res.send({add: true})
+  res.send({okay: true})
 })
 
 app.listen(8080);

@@ -60,8 +60,11 @@
         <div class="flex-1-3 padding">
             <input type="text" placeholder="กำลังศึกษาระดับชั้น (ม.4/5/6)" v-model="class" required/>
         </div>
-        <div class="flex-1 padding">
+        <div class="flex-1-2 padding">
             <input type="text" placeholder="โรงเรียน" v-model="school" required/>
+        </div>
+        <div class="flex-1-2 padding">
+            <input type="number" placeholder="เบอร์ติดต่อ" v-model="phone" required/>
         </div>
         <div class="flex-1 padding">
             <input type="text" placeholder="ตอนนี้น้องอยากสอบเข้าคณะใด มหาวิทยาลัยใด" v-model="university" required />
@@ -88,6 +91,17 @@
             <textarea placeholder="ทำไมน้องควรได้เข้าค่าย Inthanin Guide Camp" v-model="why" required></textarea>
         </div>
 
+        <div class="flex-1 padding">
+            <p class="text-center">กรณีติดต่อฉุกเฉิน</p>
+        </div>
+         <div class="flex-1-2 padding">
+            <input type="text" placeholder="ชื่อผู้ปกครอง" v-model="nameParent" required/>
+        </div>
+        <div class="flex-1-2 padding">
+            <input type="text" placeholder="เบอร์ติดต่อฉุกเฉิน" v-model="phoneParent" required/>
+        </div>
+        
+
         <div class="flex-1">
             <button type="submit">ส่งคำตอบ</button>
         </div>
@@ -95,7 +109,7 @@
      <div class="popup {{ popup ? 'is-active' : '' }}" @click="popup = false">
         <div class="card" @click.stop="popup = true">
             <div class="close" @click.stop="popup = false"></div>
-            <h4>สมัครเรียบร้อย</h4>
+            <h4>{{ message }}</h4>
             <p>กดแชร์ลง Facebook</p>
             <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.inthanincamp.xyz%2F&layout=button_count&size=large&mobile_iframe=true&width=74&height=28&appId" width="74" height="28" style="border:none; overflow: 'hidden'; scrolling: no; frameborder: 0;  allowTransparency: true"></iframe>
         </div>
