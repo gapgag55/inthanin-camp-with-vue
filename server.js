@@ -52,5 +52,5 @@ app.post('/students', function(req, res) {
   res.send({okay: true})
 })
 
-app.listen(8080);
-console.log('Magic happens on port 8080...');
+app.listen(process.env.PORT);
+console.log('Magic happens on port ' + process.env.PORT);
